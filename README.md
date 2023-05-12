@@ -1,7 +1,7 @@
-## Install dependencies
+## Install model dependencies
 
 `pip install -r requirements`
 
-## Run
+## Run model
 
 `python3 movenet.py`
