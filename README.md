@@ -1,3 +1,5 @@
+# Running the pose detection model locally:
+
 ## Install model dependencies
 
 `pip install -r requirements`
