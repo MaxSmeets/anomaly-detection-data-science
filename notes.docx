@@ -1,0 +1,44 @@
+Stakeholders:
+Roel
+Maarten
+
+Proc uren voor procesbegeleiding. 
+	- Inhoudelijk, theorie vragen mag ook stellen maar vooraf wel mailen. 
+Proj uren voor opdrachtgever. 
+
+Roel bindels mailen voor project en dataset. 
+
+	- Kijken naar data, wat valt op wat kan je zien
+	- Op basis daarvan orienteren. 
+	- Welke features zijn er
+	- Tabel? Welke vorm etc
+	- Welke onzekerheden zitten er in t project? 
+
+Doel van data
+	- Validatie van de data
+	- Betrouwbaarheid 
+
+Stappen: 
+	- Explore verkennen van data
+	- Welke distributie van de data 
+	- Is de data in evenwicht? 
+	- Evenredig testen, met bijv posities. 
+	- Wat ga je dan doen? Meer maken, waardes aanpassen bijv? Nepdata? 
+
+Documentatie:  <portfolio bijv < bijv jupiter notebook
+	- Requirements 
+	- Dataset (beschrijving)
+	- Aanpak
+	- Resultaten 
+	- Posterpresentatie (conform template) 
+	- EA ^ posterpresentatie daarmee vullen. 
+		○ Introductie 
+		○ Aanpak met details, keuzes 
+		○ Resultaten 
+		○ Discussie 
+		○ Conclusie 
+	
+Toets bestaat uit de stof van: 
+	- Summatieve opdrachten
+	- Hoorcolleges 
+  - Discussiescolleges 
