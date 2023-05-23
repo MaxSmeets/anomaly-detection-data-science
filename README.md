@@ -7,3 +7,7 @@
 ## Run model
 
 `python3 movenet.py`
+
+## EA
+
+https://www.overleaf.com/9388411831jfvmwvckpyfs
