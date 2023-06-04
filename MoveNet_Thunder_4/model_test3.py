@@ -7,34 +7,14 @@ import numpy as np
 import cv2
 import csv
 
-
-# Dictionary to map joints of body part
-KEYPOINT_DICT = {
-    'nose':0,
-    'left_eye':1,
-    'right_eye':2,
-    'left_ear':3,
-    'right_ear':4,
-    'left_shoulder':5,
-    'right_shoulder':6,
-    'left_elbow':7,
-    'right_elbow':8,
-    'left_wrist':9,
-    'right_wrist':10,
-    'left_hip':11,
-    'right_hip':12,
-    'left_knee':13,
-    'right_knee':14,
-    'left_ankle':15,
-    'right_ankle':16
-} 
-
 def run_pose_estimation(video_path):
 
     model = hub.load("https://tfhub.dev/google/movenet/singlepose/thunder/4")
     
     # Print the keys of model signatures
     print(model.signatures.keys())
+    print(outputs.keys())
+
 
     movenet = model.signatures['serving_default']
 
@@ -61,12 +41,14 @@ def run_pose_estimation(video_path):
 
         # Run model inference.
         outputs = movenet(input_frame)
-
-        # Print the keys of the outputs dictionary
-        print(outputs.keys())
-
-        # Print the complete content of the outputs dictionary
         print(outputs)
+
+
+        # Output is a [1, 1, 17, 3] tensor.
+        keypoints = outputs['output_0']
+
+        # Print the shape of the value corresponding to 'output_0'
+        # print(outputs['output_0'].shape)  
 
         # Verify the correct key for pose estimation data
         if 'output_0' in outputs:
@@ -74,8 +56,6 @@ def run_pose_estimation(video_path):
         else:
             raise ValueError("Pose estimation data not found in the outputs dictionary.")
 
-        # Print the shape of the value corresponding to 'output_0'
-        print(outputs['output_0'].shape)
 
         # Check the keys present in the outputs dictionary
         output_keys = list(outputs.keys())
