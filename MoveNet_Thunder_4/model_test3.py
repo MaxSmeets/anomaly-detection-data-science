@@ -82,5 +82,5 @@ def run_pose_estimation(video_path):
     print(f"Pose estimation data saved to {csv_filename}")
 
 # Example usage
-video_path = r'D:\HBO ICT ZUYD\BD04_Data_Science\Videos_movenet\sessie2023-opdr9-11-zijaanzicht.mp4'
+video_path = '../test.mp4'
 run_pose_estimation(video_path)

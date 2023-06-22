@@ -3,14 +3,14 @@ import tensorflow_hub as hub
 import cv2
 import csv
 import numpy as np
+import os
 
 def run_pose_estimation(video_path):
     # Load the MoveNet model
     movenet = hub.load("https://tfhub.dev/google/movenet/singlepose/lightning/4")
-
+    
     # Open the video file
     cap = cv2.VideoCapture(video_path)
-
     csv_filename = 'pose_estimation_data.csv'
     csv_file = open(csv_filename, 'w', newline='')
     csv_writer = csv.writer(csv_file)
@@ -29,6 +29,7 @@ def run_pose_estimation(video_path):
         input_data = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         input_data = tf.expand_dims(input_data, axis=0)
         input_data = tf.cast(input_data, dtype=tf.int32)
+        print("data",input_data)
 
         # Run pose estimation on the frame
         outputs = movenet(input_data)
@@ -71,5 +72,5 @@ def run_pose_estimation(video_path):
     print(f"Pose estimation data saved to {csv_filename}")
 
 if __name__ == '__main__':
-    video_path = "D:\HBO ICT ZUYD\BD04_Data_Science\Videos_movenet\test.mp4"
-    run_pose_estimation(video_path)
+    path = os.path.dirname(os.path.abspath(__file__))+ '\\test.mp4'
+    run_pose_estimation(path)
