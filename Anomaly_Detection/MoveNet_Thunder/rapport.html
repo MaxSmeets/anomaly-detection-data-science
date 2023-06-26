@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table {
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            }
+
+            th {
+            background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Anomalie Detectie Rapport</h1>
+
+        <h2>Tabel met gegevens</h2>
+        <table>
+            <tr>
+            <th>Frame</th>
+            <th>Keypoint Score</th>
+            <th>X</th>
+            <th>Y</th>
+            <th>Abnormaliteit</th>
+            </tr>
+            {% for index, row in data.iterrows() %}
+            <tr>
+            <td>{{ row['Frame'] }}</td>
+            <td>{{ row['Keypoint Score'] }}</td>
+            <td>{{ row['X'] }}</td>
+            <td>{{ row['Y'] }}</td>
+            <td>{{ row['Abnormaliteit'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Grafiek van Keypoint Scores</h2>
+        <img src="bar_chart_scores.png" alt="Grafiek van Keypoint Scores">
+
+        <h2>Grafiek van X-coördinaten</h2>
+        <img src="line_chart_x.png" alt="Grafiek van X-coördinaten">
+
+        <h2>Grafiek van Y-coördinaten</h2>
+        <img src="line_chart_y.png" alt="Grafiek van Y-coördinaten">
+
+        <h2>Scatter plot met aanduiding van abnormaliteiten (K-Means)</h2>
+        <img src="scatter_kmeans.png" alt="Scatter plot met aanduiding van abnormaliteiten (K-Means)">
+    </body>
+</html>
