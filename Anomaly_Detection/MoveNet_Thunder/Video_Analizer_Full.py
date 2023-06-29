@@ -3,6 +3,8 @@ import tensorflow as tf
 from tensorflow.python.platform import gfile
 import csv
 import os
+import tkinter as tk
+from tkinter import filedialog
 
 path = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(path, 'lite-model_movenet_singlepose_thunder_tflite_float16_4.tflite')
@@ -14,7 +16,9 @@ input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
 # Load the video
-video_path = os.path.join(path, 'test.mp4')
+root = tk.Tk()
+root.withdraw()
+video_path = filedialog.askopenfilename()
 cap = cv2.VideoCapture(video_path)
 
 # Create a CSV file to store the data
